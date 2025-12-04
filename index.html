@@ -1324,29 +1324,21 @@
         // Initial Render
         renderDiscounts();
 
-        // Modal Logic
+        // Modal Logic - Only if elements exist
         const historyModal = document.getElementById('historyModal');
-        const historyBtnLink = document.getElementById('historyBtnLink');
         const closeModal = document.querySelector('.close-modal');
 
-        historyBtnLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            historyModal.classList.add('show');
-            // Close mobile menu if open
-            navLinks.classList.remove('active');
-            mobileMenuBtn.querySelector('i').classList.remove('fa-xmark');
-            mobileMenuBtn.querySelector('i').classList.add('fa-bars');
-        });
-
-        closeModal.addEventListener('click', () => {
-            historyModal.classList.remove('show');
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target == historyModal) {
+        if (closeModal && historyModal) {
+            closeModal.addEventListener('click', () => {
                 historyModal.classList.remove('show');
-            }
-        });
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target == historyModal) {
+                    historyModal.classList.remove('show');
+                }
+            });
+        }
 
         // Weather API Integration (Open-Meteo)
         async function fetchWeather() {
