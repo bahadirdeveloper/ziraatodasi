@@ -171,6 +171,84 @@
             color: var(--text-dark);
         }
 
+        /* --- Logo & Buttons --- */
+        .site-logo {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .btn-edevlet {
+            background-color: #cc0000;
+            color: white !important;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: 1rem;
+            box-shadow: 0 4px 15px rgba(204, 0, 0, 0.3);
+        }
+
+        .btn-edevlet:hover {
+            background-color: #a30000;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(204, 0, 0, 0.5);
+        }
+
+        /* --- Modal --- */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.show .modal-content {
+            transform: translateY(0);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-gray);
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--accent-color);
+            transform: rotate(90deg);
+        }
+
         /* --- Hero Section --- */
         .hero {
             background: linear-gradient(rgba(27, 94, 32, 0.85), rgba(27, 94, 32, 0.75)), url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
@@ -589,6 +667,17 @@
         }
 
         @media (max-width: 768px) {
+            .site-logo {
+                height: 40px;
+            }
+
+            .btn-edevlet {
+                margin-left: 0;
+                margin-top: 1rem;
+                width: 100%;
+                justify-content: center;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -626,14 +715,14 @@
         <div class="container">
             <nav>
                 <a href="#" class="logo">
-                    <i class="fa-solid fa-wheat-awn"></i>
-                    Silifke Ziraat Odası
+                    <img src="silifke-ziraat-odasi-logo.png" alt="Silifke Ziraat Odası Logosu" class="site-logo">
                 </a>
                 <div class="nav-links" id="navLinks">
                     <a href="#home">Anasayfa</a>
                     <a href="#discounts">İndirimler</a>
                     <a href="#announcements">Duyurular</a>
                     <a href="#organization">Kurumsal</a>
+                    <a href="#" id="historyBtnLink">Tarihçe</a>
                     <a href="#contact">İletişim</a>
                 </div>
                 <div class="mobile-menu-btn" id="mobileMenuBtn">
@@ -654,7 +743,13 @@
             <h1>Çiftçimizin Emeği,<br>Geleceğimizin Teminatı</h1>
             <p>Silifke Ziraat Odası olarak 1966'dan beri çiftçimizin haklarını koruyor, üretimde verimliliği artırıyor
                 ve sizlere özel fırsatlar sunuyoruz.</p>
-            <a href="#discounts" class="btn btn-primary">İndirim Fırsatlarını Gör</a>
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+                <a href="#discounts" class="btn btn-primary">İndirim Fırsatlarını Gör</a>
+                <a href="https://www.turkiye.gov.tr/tzob-ciftcilik-belgesi-sorgulama" target="_blank"
+                    class="btn btn btn-edevlet">
+                    <i class="fa-solid fa-file-contract"></i> Çiftçi Belgesi (e-Devlet)
+                </a>
+            </div>
         </div>
     </section>
 
@@ -717,7 +812,7 @@
                 <p>18 Ocak 1966'dan günümüze hizmet veren yönetim kadromuz.</p>
             </div>
 
-            <div class="org-grid">
+            <div class="org-grid" style="grid-template-columns: 1fr; max-width: 600px; margin: 0 auto;">
                 <!-- Current President -->
                 <div class="president-card">
                     <img src="https://ui-avatars.com/api/?name=Kemal+Gezer&background=2E7D32&color=fff&size=150"
@@ -729,50 +824,6 @@
                     <p style="margin-top: 1rem; font-size: 0.95rem;">
                         Silifke çiftçisinin sesi olmak ve tarımsal kalkınmayı desteklemek için çalışıyoruz.
                     </p>
-                </div>
-
-                <!-- History List -->
-                <div class="history-list">
-                    <h3
-                        style="margin-bottom: 1.5rem; position: sticky; top: 0; background: white; padding-bottom: 1rem; border-bottom: 2px solid #f3f4f6;">
-                        Başkanlık Tarihçesi</h3>
-
-                    <div class="history-item">
-                        <span class="history-year">2016 - 2024</span>
-                        <span class="history-name">Cafer DOYGUN</span>
-                    </div>
-                    <div class="history-item">
-                        <span class="history-year">1992 - 2015</span>
-                        <span class="history-name">Mahire CAN</span>
-                    </div>
-                    <div class="history-item">
-                        <span class="history-year">1981 - 1991</span>
-                        <span class="history-name">A. Fuat YILMAZ</span>
-                    </div>
-                    <div class="history-item">
-                        <span class="history-year">1977 - 1980</span>
-                        <span class="history-name">Fuat YALÇIN</span>
-                    </div>
-                    <div class="history-item">
-                        <span class="history-year">1975 - 1976</span>
-                        <span class="history-name">Metin Mertol KABAL</span>
-                    </div>
-                    <div class="history-item">
-                        <span class="history-year">1973 - 1975</span>
-                        <span class="history-name">Resul KAYNAR</span>
-                    </div>
-                    <div class="history-item">
-                        <span class="history-year">1973</span>
-                        <span class="history-name">Sinan TOKMAR</span>
-                    </div>
-                    <div class="history-item">
-                        <span class="history-year">1969 - 1973</span>
-                        <span class="history-name">Mehmet ERKEN</span>
-                    </div>
-                    <div class="history-item">
-                        <span class="history-year">1966 - 1969</span>
-                        <span class="history-name">Halil İNCE (Kurucu)</span>
-                    </div>
                 </div>
             </div>
 
@@ -801,6 +852,52 @@
             </div>
         </div>
     </section>
+
+    <!-- History Modal -->
+    <div id="historyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 style="margin-bottom: 1.5rem; text-align: center; color: var(--primary-dark);">Başkanlık Tarihçesi</h2>
+            <div class="history-list" style="box-shadow: none; padding: 0;">
+                <div class="history-item">
+                    <span class="history-year">2016 - 2024</span>
+                    <span class="history-name">Cafer DOYGUN</span>
+                </div>
+                <div class="history-item">
+                    <span class="history-year">1992 - 2015</span>
+                    <span class="history-name">Mahire CAN</span>
+                </div>
+                <div class="history-item">
+                    <span class="history-year">1981 - 1991</span>
+                    <span class="history-name">A. Fuat YILMAZ</span>
+                </div>
+                <div class="history-item">
+                    <span class="history-year">1977 - 1980</span>
+                    <span class="history-name">Fuat YALÇIN</span>
+                </div>
+                <div class="history-item">
+                    <span class="history-year">1975 - 1976</span>
+                    <span class="history-name">Metin Mertol KABAL</span>
+                </div>
+                <div class="history-item">
+                    <span class="history-year">1973 - 1975</span>
+                    <span class="history-name">Resul KAYNAR</span>
+                </div>
+                <div class="history-item">
+                    <span class="history-year">1973</span>
+                    <span class="history-name">Sinan TOKMAR</span>
+                </div>
+                <div class="history-item">
+                    <span class="history-year">1969 - 1973</span>
+                    <span class="history-name">Mehmet ERKEN</span>
+                </div>
+                <div class="history-item">
+                    <span class="history-year">1966 - 1969</span>
+                    <span class="history-name">Halil İNCE (Kurucu)</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer id="contact">
@@ -1030,6 +1127,30 @@
 
         // Initial Render
         renderDiscounts();
+
+        // Modal Logic
+        const historyModal = document.getElementById('historyModal');
+        const historyBtnLink = document.getElementById('historyBtnLink');
+        const closeModal = document.querySelector('.close-modal');
+
+        historyBtnLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            historyModal.classList.add('show');
+            // Close mobile menu if open
+            navLinks.classList.remove('active');
+            mobileMenuBtn.querySelector('i').classList.remove('fa-xmark');
+            mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+        });
+
+        closeModal.addEventListener('click', () => {
+            historyModal.classList.remove('show');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target == historyModal) {
+                historyModal.classList.remove('show');
+            }
+        });
 
     </script>
 </body>
