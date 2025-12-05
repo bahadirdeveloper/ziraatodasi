@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary Meta Tags -->
+    <title>Anlaşmalı Kurumlar | Silifke Ziraat Odası - Çiftçi İndirimleri</title>
+    <meta name="title" content="Anlaşmalı Kurumlar | Silifke Ziraat Odası">
+    <meta name="description"
+        content="Silifke Ziraat Odası anlaşmalı kurumları. Üyelerimize özel sağlık, eğitim, gıda ve sektörel indirimler. Çiftçi belgesi ile avantajlar.">
+    <meta name="keywords"
+        content="Silifke Ziraat Odası, anlaşmalı kurumlar, çiftçi indirimleri, sağlık indirimi, eğitim indirimi">
+    <meta name="author" content="Silifke Ziraat Odası">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://silifkeziraatodasi.org.tr/anlasmalı-kurumlar">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://silifkeziraatodasi.org.tr/anlasmalı-kurumlar">
+    <meta property="og:title" content="Anlaşmalı Kurumlar | Silifke Ziraat Odası">
+    <meta property="og:description" content="Üyelerimize özel sağlık, eğitim, gıda ve sektörel indirimler.">
+    <meta property="og:image" content="https://silifkeziraatodasi.org.tr/silifke-ziraat-odasi-logo.webp">
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://silifkeziraatodasi.org.tr/anlasmalı-kurumlar">
+    <meta property="twitter:title" content="Anlaşmalı Kurumlar | Silifke Ziraat Odası">
+    <meta property="twitter:description" content="Üyelerimize özel sağlık, eğitim, gıda ve sektörel indirimler.">
+
+    <!-- Favicon & Theme -->
+    <link rel="icon" type="image/webp" href="silifke-ziraat-odasi-logo.webp">
+    <meta name="theme-color" content="#2E7D32">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <style>
+        :root {
+            --primary-color: #2E7D32;
+            --primary-light: #4CAF50;
+            --primary-dark: #1B5E20;
+            --accent-color: #F9A825;
+            --bg-light: #F3F4F6;
+            --white: #FFFFFF;
+            --text-dark: #111827;
+            --text-gray: #4B5563;
+            --border-radius: 16px;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-dark);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        /* Navbar */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .site-logo {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: inline-block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(27, 94, 32, 0.9), rgba(27, 94, 32, 0.8)), url('assets/img/silifke-hero.png');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 8rem 0 4rem;
+            margin-top: -80px;
+            padding-top: calc(8rem + 80px);
+        }
+
+        .page-header h1 {
+            color: var(--white);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Institution Grid */
+        .institutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .institution-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e5e7eb;
+            transition: var(--transition);
+        }
+
+        .institution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .institution-header {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .institution-logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 12px;
+            background-color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+            box-shadow: var(--shadow-sm);
+            flex-shrink: 0;
+        }
+
+        .institution-info h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.25rem;
+            line-height: 1.3;
+        }
+
+        .institution-category {
+            font-size: 0.8rem;
+            padding: 0.25rem 0.75rem;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .institution-body {
+            padding: 1.5rem;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-color) 0%, #ffb300 100%);
+            color: var(--text-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(249, 168, 37, 0.4);
+        }
+
+        .institution-desc {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .institution-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .action-btn {
+            flex: 1;
+            padding: 0.75rem;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .btn-call {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-call:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-location {
+            background-color: #EFF6FF;
+            color: #1D4ED8;
+            border: 1px solid #DBEAFE;
+        }
+
+        .btn-location:hover {
+            background-color: #DBEAFE;
+        }
+
+        /* Category Filters */
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 2rem;
+            border: 1px solid #e5e7eb;
+            background: var(--white);
+            color: var(--text-gray);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .filter-btn.active {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3);
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 0.5rem auto 0;
+        }
+
+        .section-title p {
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111827;
+            color: var(--white);
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+
+        .footer-links a {
+            color: #9CA3AF;
+            transition: var(--transition);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: #9CA3AF;
+        }
+
+        .contact-item i {
+            color: var(--primary-light);
+            margin-top: 4px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #6B7280;
+            font-size: 0.9rem;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 3rem;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .info-box h3 {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .info-box p {
+            color: var(--text-gray);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: var(--shadow-md);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .site-logo {
+                height: 40px;
+            }
+
+            .logo-text {
+                font-size: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .institutions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="silifke-ziraat-odasi-logo.webp" alt="Silifke Ziraat Odası Logosu" class="site-logo">
+                    <span class="logo-text">Silifke Ziraat Odası</span>
+                </a>
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html">Anasayfa</a>
+                    <a href="kurumsal.html">Kurumsal</a>
+                    <a href="hizmetler.html">Hizmetler & Bilgi</a>
+                    <a href="anlasmalı-kurumlar.html" class="active">Anlaşmalı Kurumlar</a>
+                    <a href="#contact">İletişim</a>
+                </div>
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Anlaşmalı Kurumlar</h1>
+            <p>Silifke Ziraat Odası üyelerine özel indirim ve avantajlar sunan anlaşmalı kurumlarımız.</p>
+        </div>
+    </section>
+
+    <!-- Info Box -->
+    <section style="padding-bottom: 0;">
+        <div class="container">
+            <div class="info-box">
+                <h3><i class="fa-solid fa-circle-info"></i> Bilgilendirme</h3>
+                <p>Aşağıdaki indirimlerden faydalanmak için <strong>geçerli Ziraat Odası üye kimliğinizi</strong> ibraz
+                    etmeniz gerekmektedir. İndirim oranları ve koşulları kurumlar tarafından belirlenmiş olup değişiklik
+                    gösterebilir. Güncel bilgi için ilgili kurumu arayabilirsiniz.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Institutions Section -->
+    <section id="institutions">
+        <div class="container">
+            <div class="section-title">
+                <h2>Anlaşmalı Kurum Listesi</h2>
+                <p>Sağlık, eğitim, gıda ve sektörel alanlarda üyelerimize özel indirimler</p>
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Tümü</button>
+                <button class="filter-btn" data-filter="saglik">Sağlık</button>
+                <button class="filter-btn" data-filter="egitim">Eğitim</button>
+                <button class="filter-btn" data-filter="gida">Gıda / Yemek</button>
+                <button class="filter-btn" data-filter="sektorel">Sektörel</button>
+            </div>
+
+            <div class="institutions-grid" id="institutionsGrid">
+                <!-- Cards will be injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Silifke Ziraat Odası</h3>
+                    <p style="color: #9CA3AF; margin-bottom: 1.5rem;">Çiftçimizin yanında, üretimde öncüyüz.</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="https://www.facebook.com/silifkeziraatodasibaskanligi/" target="_blank"
+                            rel="noopener noreferrer" style="font-size: 1.2rem;"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/silifkeziraatodasi?igsh=aDc2bmJtdzh6dTdm" target="_blank"
+                            rel="noopener noreferrer" style="font-size: 1.2rem;"><i
+                                class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Hızlı Erişim</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Anasayfa</a></li>
+                        <li><a href="kurumsal.html">Kurumsal</a></li>
+                        <li><a href="hizmetler.html">Hizmetler</a></li>
+                        <li><a href="anlasmalı-kurumlar.html">Anlaşmalı Kurumlar</a></li>
+                        <li><a href="#contact">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>İletişim</h3>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Saray Mah. Sanatçılar 2 Sk.<br>Okur İşhanı Kat:3 No:301<br>33940 Silifke / MERSİN</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>0324 714 49 13</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        <span>0531 783 88 18</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>bilgi@silifkeziraatodasi.org.tr</span>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Silifke Ziraat Odası. Tüm hakları saklıdır.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Anlaşmalı Kurumlar Verileri
+        const institutions = [
+            {
+                id: 1,
+                name: "Özel Silifke Yaşam Hastanesi",
+                category: "saglik",
+                discount: "%20 İndirim",
+                desc: "Muayene, tahlil ve yatarak tedavilerde üyelere özel indirim.",
+                logo: "fa-hospital",
+                phone: "03247140000",
+                location: "https://maps.google.com/?q=Silifke+Yasam+Hastanesi"
+            },
+            {
+                id: 2,
+                name: "Vizyon Göz Merkezi",
+                category: "saglik",
+                discount: "%25 İndirim",
+                desc: "Göz muayenesi ve cerrahi işlemlerde indirim.",
+                logo: "fa-eye",
+                phone: "03247140001",
+                location: "https://maps.google.com/?q=Silifke+Vizyon+Goz"
+            },
+            {
+                id: 3,
+                name: "Silifke Diş Polikliniği",
+                category: "saglik",
+                discount: "%15 İndirim",
+                desc: "Tüm diş tedavilerinde ve implant uygulamalarında geçerli.",
+                logo: "fa-tooth",
+                phone: "03247140002",
+                location: "https://maps.google.com/?q=Silifke+Dis"
+            },
+            {
+                id: 4,
+                name: "Final Okulları",
+                category: "egitim",
+                discount: "%15 İndirim",
+                desc: "Ziraat Odası üyelerinin çocuklarına kayıt indirimi.",
+                logo: "fa-graduation-cap",
+                phone: "03247140003",
+                location: "https://maps.google.com/?q=Final+Okullari+Silifke"
+            },
+            {
+                id: 5,
+                name: "Silifke Dershanesi",
+                category: "egitim",
+                discount: "%10 İndirim",
+                desc: "Tüm kurs programlarında geçerlidir.",
+                logo: "fa-book-open",
+                phone: "03247140004",
+                location: "https://maps.google.com/?q=Silifke+Dershanesi"
+            },
+            {
+                id: 6,
+                name: "Toros Gübre Bayii",
+                category: "sektorel",
+                discount: "%10 İndirim",
+                desc: "Nakit alımlarda tüm gübre çeşitlerinde geçerli.",
+                logo: "fa-leaf",
+                phone: "03247140005",
+                location: "https://maps.google.com/?q=Toros+Gubre+Silifke"
+            },
+            {
+                id: 7,
+                name: "Bereket Yem",
+                category: "sektorel",
+                discount: "%5 İndirim",
+                desc: "Büyükbaş ve küçükbaş yemlerinde tonajlı alımda indirim.",
+                logo: "fa-wheat-awn",
+                phone: "03247140006",
+                location: "https://maps.google.com/?q=Bereket+Yem+Silifke"
+            },
+            {
+                id: 8,
+                name: "Silifke Tarım Makinaları",
+                category: "sektorel",
+                discount: "%8 İndirim",
+                desc: "Traktör, pulluk ve tarım ekipmanlarında geçerli.",
+                logo: "fa-tractor",
+                phone: "03247140007",
+                location: "https://maps.google.com/?q=Silifke+Tarim+Makinalari"
+            },
+            {
+                id: 9,
+                name: "Silifke Sigorta",
+                category: "sektorel",
+                discount: "Özel Fiyat",
+                desc: "TARSİM ve araç sigortalarında danışmanlık ve indirim.",
+                logo: "fa-shield-halved",
+                phone: "03247140008",
+                location: "https://maps.google.com/?q=Silifke+Sigorta"
+            },
+            {
+                id: 10,
+                name: "Göksu Restoran",
+                category: "gida",
+                discount: "%10 İndirim",
+                desc: "Tüm yemek ve kahvaltı çeşitlerinde geçerli.",
+                logo: "fa-utensils",
+                phone: "03247140009",
+                location: "https://maps.google.com/?q=Goksu+Restoran+Silifke"
+            },
+            {
+                id: 11,
+                name: "Limon Kafe",
+                category: "gida",
+                discount: "%15 İndirim",
+                desc: "Kahve ve tatlı çeşitlerinde geçerli.",
+                logo: "fa-mug-hot",
+                phone: "03247140010",
+                location: "https://maps.google.com/?q=Limon+Kafe+Silifke"
+            },
+            {
+                id: 12,
+                name: "Silifke Teknoloji Kulübü",
+                category: "sektorel",
+                discount: "Ücretsiz Danışmanlık",
+                desc: "Çiftçilerimize dijitalleşme, web sitesi ve teknoloji danışmanlığı.",
+                logo: "fa-microchip",
+                phone: "05317838818",
+                location: "https://maps.google.com/?q=Silifke"
+            }
+        ];
+
+        // DOM Elements
+        const institutionsGrid = document.getElementById('institutionsGrid');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        // Sanitize HTML
+        function sanitizeHTML(str) {
+            const temp = document.createElement('div');
+            temp.textContent = str;
+            return temp.innerHTML;
+        }
+
+        // Validate URL
+        function isValidURL(str) {
+            try {
+                const url = new URL(str);
+                return url.protocol === 'https:' || url.protocol === 'tel:';
+            } catch {
+                return false;
+            }
+        }
+
+        // Get Category Name
+        function getCategoryName(cat) {
+            const names = {
+                'saglik': 'Sağlık',
+                'egitim': 'Eğitim',
+                'gida': 'Gıda / Yemek',
+                'sektorel': 'Sektörel'
+            };
+            return names[cat] || cat;
+        }
+
+        // Render Institutions
+        function renderInstitutions(filter = 'all') {
+            institutionsGrid.innerHTML = '';
+
+            const filteredData = filter === 'all'
+                ? institutions
+                : institutions.filter(item => item.category === filter);
+
+            filteredData.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'institution-card';
+
+                const safeName = sanitizeHTML(item.name);
+                const safeDiscount = sanitizeHTML(item.discount);
+                const safeDesc = sanitizeHTML(item.desc);
+                const safeLogo = sanitizeHTML(item.logo);
+                const safeLocation = isValidURL(item.location) ? item.location : '#';
+                const safePhone = item.phone.replace(/[^0-9+]/g, '');
+
+                card.innerHTML = `
+                    <div class="institution-header">
+                        <div class="institution-logo">
+                            <i class="fa-solid ${safeLogo}"></i>
+                        </div>
+                        <div class="institution-info">
+                            <h3>${safeName}</h3>
+                            <span class="institution-category">${getCategoryName(item.category)}</span>
+                        </div>
+                    </div>
+                    <div class="institution-body">
+                        <div class="discount-badge">${safeDiscount}</div>
+                        <p class="institution-desc">${safeDesc}</p>
+                        <div class="institution-actions">
+                            <a href="${safeLocation}" target="_blank" rel="noopener noreferrer" class="action-btn btn-location">
+                                <i class="fa-solid fa-location-dot"></i> Konum
+                            </a>
+                            <a href="tel:${safePhone}" class="action-btn btn-call">
+                                <i class="fa-solid fa-phone"></i> Ara
+                            </a>
+                        </div>
+                    </div>
+                `;
+                institutionsGrid.appendChild(card);
+            });
+        }
+
+        // Event Listeners
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderInstitutions(btn.dataset.filter);
+            });
+        });
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Initial Render
+        renderInstitutions();
+    </script>
+</body>
+
+</html>

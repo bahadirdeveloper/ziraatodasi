@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://silifkeziraatodasi.org.tr/</loc>
-    <lastmod>2024-12-04</lastmod>
+    <lastmod>2025-12-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://silifkeziraatodasi.org.tr/kurumsal.html</loc>
-    <lastmod>2024-12-04</lastmod>
+    <lastmod>2025-12-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://silifkeziraatodasi.org.tr/hizmetler.html</loc>
-    <lastmod>2024-12-04</lastmod>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://silifkeziraatodasi.org.tr/anlasmalı-kurumlar.html</loc>
+    <lastmod>2025-12-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
