@@ -952,7 +952,7 @@
                 ve sizlere özel fırsatlar sunuyoruz.</p>
             <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
                 <a href="#discounts" class="btn btn-primary">İndirim Fırsatlarını Gör</a>
-                <a href="https://www.turkiye.gov.tr/tzob-ciftcilik-belgesi-sorgulama" target="_blank"
+                <a href="https://www.turkiye.gov.tr/tzob-ciftcilik-belgesi-sorgulama" target="_blank" rel="noopener noreferrer"
                     class="btn btn btn-edevlet">
                     <i class="fa-solid fa-file-contract"></i> Çiftçi Belgesi (e-Devlet)
                 </a>
@@ -966,7 +966,7 @@
         <div class="container">
             <div class="quick-links-grid">
                 <!-- e-Devlet -->
-                <a href="https://www.turkiye.gov.tr/" target="_blank" class="quick-link-card">
+                <a href="https://www.turkiye.gov.tr/" target="_blank" rel="noopener noreferrer" class="quick-link-card">
                     <div class="quick-link-img-wrapper">
                         <img src="edevlet-logo.webp" alt="e-Devlet" style="height: 60px; width: auto;">
                     </div>
@@ -974,7 +974,7 @@
                 </a>
 
                 <!-- Bitki Koruma -->
-                <a href="https://bku.tarimorman.gov.tr/" target="_blank" class="quick-link-card">
+                <a href="https://bku.tarimorman.gov.tr/" target="_blank" rel="noopener noreferrer" class="quick-link-card">
                     <div class="quick-link-img-wrapper">
                         <img src="tarim-logo.webp" alt="Tarım ve Orman Bakanlığı" style="height: 80px; width: auto;">
                     </div>
@@ -982,7 +982,7 @@
                 </a>
 
                 <!-- Meteoroloji -->
-                <a href="https://www.mgm.gov.tr/" target="_blank" class="quick-link-card">
+                <a href="https://www.mgm.gov.tr/" target="_blank" rel="noopener noreferrer" class="quick-link-card">
                     <div class="quick-link-img-wrapper">
                         <img src="mgm-logo.webp" alt="Meteoroloji Genel Müdürlüğü" style="height: 80px; width: auto;">
                     </div>
@@ -1135,7 +1135,7 @@
                         <span>bilgi@silifkeziraatodasi.org.tr</span>
                     </div>
                     <div style="margin-top: 1.5rem;">
-                        <a href="https://goo.gl/maps/example" target="_blank" class="btn btn-primary"
+                        <a href="https://goo.gl/maps/example" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
                             style="padding: 0.5rem 1rem; font-size: 0.9rem;">
                             <i class="fa-solid fa-map-location-dot"></i> Yol Tarifi Al
                         </a>
@@ -1240,6 +1240,23 @@
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
 
+        // Security: Sanitize text to prevent XSS
+        function sanitizeHTML(str) {
+            const temp = document.createElement('div');
+            temp.textContent = str;
+            return temp.innerHTML;
+        }
+
+        // Security: Validate URL format
+        function isValidURL(str) {
+            try {
+                const url = new URL(str);
+                return url.protocol === 'https:' || url.protocol === 'tel:';
+            } catch {
+                return false;
+            }
+        }
+
         // Render Functions
         function renderDiscounts(filter = 'all') {
             discountsGrid.innerHTML = '';
@@ -1251,24 +1268,33 @@
             filteredData.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'discount-card';
+
+                // Sanitize all user-facing data
+                const safeName = sanitizeHTML(item.name);
+                const safeDiscount = sanitizeHTML(item.discount);
+                const safeDesc = sanitizeHTML(item.desc);
+                const safeLogo = sanitizeHTML(item.logo);
+                const safeLocation = isValidURL(item.location) ? item.location : '#';
+                const safePhone = item.phone.replace(/[^0-9+]/g, '');
+
                 card.innerHTML = `
                     <div class="card-header">
                         <div class="company-logo">
-                            <i class="fa-solid ${item.logo}"></i>
+                            <i class="fa-solid ${safeLogo}"></i>
                         </div>
                         <div class="company-info">
-                            <h3>${item.name}</h3>
+                            <h3>${safeName}</h3>
                             <span class="category-tag">${getCategoryName(item.category)}</span>
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="discount-amount">${item.discount}</div>
-                        <p class="discount-desc">${item.desc}</p>
+                        <div class="discount-amount">${safeDiscount}</div>
+                        <p class="discount-desc">${safeDesc}</p>
                         <div class="card-actions">
-                            <a href="${item.location}" target="_blank" class="action-btn btn-map">
+                            <a href="${safeLocation}" target="_blank" rel="noopener noreferrer" class="action-btn btn-map">
                                 <i class="fa-solid fa-location-dot"></i> Konum
                             </a>
-                            <a href="tel:${item.phone}" class="action-btn btn-phone">
+                            <a href="tel:${safePhone}" class="action-btn btn-phone">
                                 <i class="fa-solid fa-phone"></i> Hemen Ara
                             </a>
                         </div>

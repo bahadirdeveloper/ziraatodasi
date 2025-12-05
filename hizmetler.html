@@ -568,11 +568,35 @@
             }
         });
 
-        // Copy to Clipboard
+        // Copy to Clipboard - Secure version
         function copyToClipboard(elementId) {
-            const text = document.getElementById(elementId).innerText;
+            // Validate elementId to prevent injection
+            if (!/^iban[0-9]+$/.test(elementId)) {
+                console.error('Invalid element ID');
+                return;
+            }
+
+            const element = document.getElementById(elementId);
+            if (!element) {
+                console.error('Element not found');
+                return;
+            }
+
+            const text = element.innerText;
+
+            // Validate IBAN format (basic validation)
+            if (!/^TR[0-9\s]+$/.test(text)) {
+                console.error('Invalid IBAN format');
+                return;
+            }
+
             navigator.clipboard.writeText(text).then(() => {
-                alert('IBAN kopyalandı: ' + text);
+                // Use a custom notification instead of alert for better UX
+                const originalText = element.parentElement.innerHTML;
+                element.parentElement.innerHTML = '<span style="color: var(--primary-color); font-weight: 600;">✓ Kopyalandı!</span>';
+                setTimeout(() => {
+                    element.parentElement.innerHTML = originalText;
+                }, 2000);
             }).catch(err => {
                 console.error('Kopyalama başarısız:', err);
             });
