@@ -64,9 +64,10 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Silifke Ziraat Odası",
+      "alternateName": "Silifke Ziraat Odası Başkanlığı",
       "url": "https://silifkeziraatodasi.org.tr",
       "logo": "https://silifkeziraatodasi.org.tr/silifke-ziraat-odasi-logo.webp",
-      "description": "Silifke Ziraat Odası, 1966'dan beri Silifke çiftçisinin yanında.",
+      "description": "Silifke Ziraat Odası, 1966'dan beri Silifke çiftçisinin yanında. Tarımsal üretimin geliştirilmesi, çiftçi haklarının korunması ve üyelere özel avantajlar sunuyoruz.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Saray Mah. Sanatçılar 2 Sk. Okur İşhanı Kat:3 No:301",
@@ -75,9 +76,28 @@
         "postalCode": "33940",
         "addressCountry": "TR"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "36.3778",
+        "longitude": "33.9344"
+      },
       "telephone": "+90-324-714-49-13",
+      "email": "bilgi@silifkeziraatodasi.org.tr",
       "foundingDate": "1966",
-      "sameAs": []
+      "areaServed": {
+        "@type": "City",
+        "name": "Silifke, Mersin"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/silifkeziraatodasibaskanligi/",
+        "https://www.instagram.com/silifkeziraatodasi"
+      ]
     }
     </script>
 
@@ -928,6 +948,118 @@
 
             .mobile-menu-btn {
                 display: block;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .filters {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .discounts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Small Mobile (480px and below) */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .card-header {
+                padding: 1rem;
+            }
+
+            .company-logo {
+                width: 50px;
+                height: 50px;
+                font-size: 1.25rem;
+            }
+
+            .card-body {
+                padding: 1rem;
+            }
+
+            .card-actions {
+                flex-direction: column;
+            }
+
+            .action-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        /* Touch Device Optimization */
+        @media (hover: none) and (pointer: coarse) {
+
+            .btn,
+            .filter-btn,
+            .action-btn,
+            .nav-links a {
+                min-height: 44px;
+                min-width: 44px;
+            }
+
+            .discount-card:hover {
+                transform: none;
+            }
+        }
+
+        /* Landscape Phone Optimization */
+        @media (max-width: 896px) and (orientation: landscape) {
+            .hero {
+                min-height: auto;
+                padding: 6rem 0 3rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+
+            header,
+            footer,
+            .mobile-menu-btn,
+            .card-actions,
+            .filters {
+                display: none !important;
+            }
+
+            .discount-card {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ccc;
             }
         }
     </style>
