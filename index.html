@@ -546,6 +546,25 @@
             color: var(--primary-color);
             box-shadow: var(--shadow-sm);
             border: 1px solid #e5e7eb;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .company-logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .company-logo-fallback {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: var(--primary-color);
         }
 
         .company-info {
@@ -1019,8 +1038,12 @@
                 <button class="filter-btn active" data-filter="all">Tümü</button>
                 <button class="filter-btn" data-filter="saglik">Sağlık</button>
                 <button class="filter-btn" data-filter="egitim">Eğitim</button>
-                <button class="filter-btn" data-filter="gida">Gıda / Yemek</button>
-                <button class="filter-btn" data-filter="sektorel">Sektörel</button>
+                <button class="filter-btn" data-filter="kargo">Kargo</button>
+                <button class="filter-btn" data-filter="laboratuvar">Laboratuvar</button>
+                <button class="filter-btn" data-filter="ev-tekstil">Ev & Tekstil</button>
+                <button class="filter-btn" data-filter="otel">Otel</button>
+                <button class="filter-btn" data-filter="fizyoterapi">Fizyoterapi</button>
+                <button class="filter-btn" data-filter="teknoloji">Teknoloji</button>
             </div>
 
             <div class="discounts-grid" id="discountsGrid">
@@ -1174,97 +1197,202 @@
 
     <!-- JavaScript -->
     <script>
-        // Mock Data for Discounts (Silifke Context)
+        // Anlaşmalı Kurumlar Verileri
         const discounts = [
+            // SAĞLIK KURUMLARI
             {
                 id: 1,
-                name: "Özel Silifke Yaşam Hastanesi",
+                name: "Mersin Niv Göz Merkezi",
                 category: "saglik",
-                discount: "%20 İndirim",
-                desc: "Muayene, tahlil ve yatarak tedavilerde üyelere özel indirim.",
-                logo: "fa-hospital",
-                phone: "905551234567",
-                location: "https://goo.gl/maps/example"
+                discount: "%20 / %10 İndirim",
+                desc: "Muayene, tetkik ve görüntüleme hizmetlerinden %20, ameliyat hizmetlerinde %10 indirim.",
+                logo: "fa-eye",
+                image: "assets/kurumlar/niv-goz.webp",
+                phone: "4448648",
+                location: "https://maps.app.goo.gl/2kNQrX8tWEji9vJJA"
             },
             {
                 id: 2,
-                name: "Toros Gübre Bayii",
-                category: "sektorel",
+                name: "Özel Ulusal Diş Sağlığı Polikliniği",
+                category: "saglik",
                 discount: "%10 İndirim",
-                desc: "Nakit alımlarda tüm gübre çeşitlerinde geçerli.",
-                logo: "fa-leaf",
-                phone: "905551234567",
-                location: "https://goo.gl/maps/example"
+                desc: "Ağız ve diş sağlığı hizmetlerinde geçerli indirim.",
+                logo: "fa-tooth",
+                image: "assets/kurumlar/ulusal-dis.webp",
+                phone: "05321645514",
+                location: "https://maps.app.goo.gl/di99VNPdcnHAjnEx8"
             },
             {
                 id: 3,
-                name: "Final Okulları",
-                category: "egitim",
-                discount: "%15 İndirim",
-                desc: "Ziraat Odası üyelerinin çocuklarına kayıt indirimi.",
-                logo: "fa-graduation-cap",
-                phone: "905551234567",
-                location: "https://goo.gl/maps/example"
+                name: "ODYOLOG Sude Taşer İşitme Merkezi",
+                category: "saglik",
+                discount: "%10 İndirim",
+                desc: "İşitme cihazı satışlarında geçerli indirim.",
+                logo: "fa-ear-listen",
+                image: "assets/kurumlar/odyolog-sude.webp",
+                phone: "05523626552",
+                location: "https://maps.app.goo.gl/dtQ6fbnoD4zTNNx86"
             },
             {
                 id: 4,
-                name: "Göksu Restoran",
-                category: "gida",
-                discount: "%10 İndirim",
-                desc: "Tüm yemek ve kahvaltı çeşitlerinde geçerli.",
-                logo: "fa-utensils",
-                phone: "905551234567",
-                location: "https://goo.gl/maps/example"
+                name: "Olbamed Sağlık Merkezi",
+                category: "saglik",
+                discount: "%10 / %20 İndirim",
+                desc: "Tüm sağlık hizmetlerinde %10, diş polikliniğinde %20 indirim.",
+                logo: "fa-hospital",
+                image: "assets/kurumlar/olbamed.webp",
+                phone: "03247148100",
+                location: "https://maps.app.goo.gl/xcJui3eG8vqmdfjv7"
             },
             {
                 id: 5,
-                name: "Silifke Sigorta",
-                category: "sektorel",
-                discount: "Özel Fiyat",
-                desc: "TARSİM ve araç sigortalarında danışmanlık ve indirim.",
-                logo: "fa-shield-halved",
-                phone: "905551234567",
-                location: "https://goo.gl/maps/example"
+                name: "Özel Önder Geçer Ağız ve Diş Sağlığı Polikliniği",
+                category: "saglik",
+                discount: "%10 İndirim",
+                desc: "Ağız ve diş sağlığı hizmetlerinde geçerli indirim.",
+                logo: "fa-tooth",
+                image: "assets/kurumlar/onder-gecer.webp",
+                phone: "03247143183",
+                location: "https://maps.app.goo.gl/TNdWRbd8xNQZL7CM9"
             },
             {
                 id: 6,
-                name: "Vizyon Göz Merkezi",
+                name: "Silifke Diş Hekimi Kerem Yağız Yazan",
                 category: "saglik",
-                discount: "%25 İndirim",
-                desc: "Göz muayenesi ve cerrahi işlemlerde indirim.",
-                logo: "fa-eye",
-                phone: "905551234567",
-                location: "https://goo.gl/maps/example"
+                discount: "%20 İndirim",
+                desc: "Ağız ve diş sağlığı hizmetlerinde geçerli indirim.",
+                logo: "fa-tooth",
+                image: "assets/kurumlar/kerem-yazan.webp",
+                phone: "05340214535",
+                location: "https://maps.app.goo.gl/SWTNsiy91DF6ahQp8"
             },
+            // KARGO
             {
                 id: 7,
-                name: "Bereket Yem",
-                category: "sektorel",
-                discount: "%5 İndirim",
-                desc: "Büyükbaş ve küçükbaş yemlerinde tonajlı alımda indirim.",
-                logo: "fa-cow",
-                phone: "905551234567",
-                location: "https://goo.gl/maps/example"
+                name: "Aras Kargo Silifke Şubesi",
+                category: "kargo",
+                discount: "%10 - %50 Arası",
+                desc: "Desi miktarına göre değişen oranlarda indirim.",
+                logo: "fa-truck-fast",
+                image: "assets/kurumlar/aras-kargo.webp",
+                phone: "05497819008",
+                location: "https://maps.app.goo.gl/7co8j2tBEnehFQW7A"
             },
             {
                 id: 8,
-                name: "Limon Kafe",
-                category: "gida",
-                discount: "%15 İndirim",
-                desc: "Kahve ve tatlı çeşitlerinde geçerli.",
-                logo: "fa-mug-hot",
-                phone: "905551234567",
-                location: "https://goo.gl/maps/example"
+                name: "DHL eCommerce Silifke Şubesi",
+                category: "kargo",
+                discount: "Anlaşmalı Fiyat",
+                desc: "Ulusal ve uluslararası kargo gönderimlerinde özel fiyatlar.",
+                logo: "fa-box",
+                image: "assets/kurumlar/dhl-kargo.webp",
+                phone: "08502202255",
+                location: "https://maps.app.goo.gl/silifke-dhl"
             },
+            // EĞİTİM
             {
                 id: 9,
+                name: "Mektebim Koleji Mersin Silifke Kampüsü",
+                category: "egitim",
+                discount: "%20 İndirim",
+                desc: "Eğitim ücretlerinde geçerli indirim.",
+                logo: "fa-graduation-cap",
+                image: "assets/kurumlar/mektebim.webp",
+                phone: "05349332098",
+                location: "https://maps.app.goo.gl/rBjtmQ2jAwSr2mxn9"
+            },
+            {
+                id: 10,
+                name: "Özel Göksu Ortaokulu ve Lisesi",
+                category: "egitim",
+                discount: "%20 + Kardeş İndirimi",
+                desc: "Eğitim ücretlerinde %20 indirim ve kardeş indirimi.",
+                logo: "fa-school",
+                image: "assets/kurumlar/goksu-okullari.webp",
+                phone: "03247150595",
+                location: "https://maps.app.goo.gl/xxbqf3chBCwXt8LX8"
+            },
+            // ANALİZ LABORATUVARI
+            {
+                id: 11,
+                name: "Metalab Tarımsal Analiz Laboratuvarı",
+                category: "laboratuvar",
+                discount: "Anlaşmalı Fiyat",
+                desc: "Toprak, yaprak, su ve gübre analiz hizmetleri.",
+                logo: "fa-flask",
+                image: "assets/kurumlar/metalab.webp",
+                phone: "03243364141",
+                location: "https://maps.app.goo.gl/7gg7Gt2FMdBc2jey8"
+            },
+            // EV VE TEKSTİL
+            {
+                id: 12,
+                name: "Özmen Halı",
+                category: "ev-tekstil",
+                discount: "Özel Fiyat",
+                desc: "Halı çeşitlerinde üyelere özel fiyatlar.",
+                logo: "fa-couch",
+                image: "assets/kurumlar/ozmen-hali.webp",
+                phone: "05448205106",
+                location: "https://maps.app.goo.gl/vGhzmXmMNALYCic28"
+            },
+            {
+                id: 13,
+                name: "Kaledipliler Perde",
+                category: "ev-tekstil",
+                discount: "Özel Fiyat",
+                desc: "Perde çeşitlerinde üyelere özel fiyatlar.",
+                logo: "fa-store",
+                image: "assets/kurumlar/kaledipliler.webp",
+                phone: "05305888126",
+                location: "https://maps.app.goo.gl/chbekGvXi5VCw1qe7"
+            },
+            // OTEL KONAKLAMA
+            {
+                id: 14,
+                name: "Yücesoy Liva Otel - Mersin",
+                category: "otel",
+                discount: "%15 İndirim",
+                desc: "Konaklama ücretlerinde %15 indirim. Hamam & sauna, restoran harcamalarında özel oranlar.",
+                logo: "fa-hotel",
+                image: "assets/kurumlar/liva-otel.webp",
+                phone: "05302909733",
+                location: "https://maps.app.goo.gl/YjSh5FJvS9uLoMsM9"
+            },
+            // FİZYOTERAPİ
+            {
+                id: 15,
+                name: "Erdem Çomak Fizyoterapi Danışmanlık Merkezi",
+                category: "fizyoterapi",
+                discount: "%10 İndirim",
+                desc: "Fizyoterapi hizmetlerinde geçerli indirim.",
+                logo: "fa-user-doctor",
+                image: "assets/kurumlar/erdem-comak.webp",
+                phone: "05527873355",
+                location: "https://maps.app.goo.gl/3HAwxEAw1ckwioyw9"
+            },
+            {
+                id: 16,
+                name: "Fizy Center Fizyoterapi Merkezi",
+                category: "fizyoterapi",
+                discount: "%10 İndirim",
+                desc: "Fizyoterapi hizmetlerinde geçerli indirim.",
+                logo: "fa-hands-holding-child",
+                image: "assets/kurumlar/fizy-center.webp",
+                phone: "05438569409",
+                location: "https://maps.app.goo.gl/8griuFS4pMDpgpFTA"
+            },
+            // TEKNOLOJİ
+            {
+                id: 17,
                 name: "Silifke Teknoloji Kulübü",
-                category: "sektorel",
-                discount: "Ücretsiz Danışmanlık",
-                desc: "Çiftçilerimize dijitalleşme, web sitesi ve teknoloji danışmanlığı.",
+                category: "teknoloji",
+                discount: "Üyelere Özel",
+                desc: "Teknoloji eğitimleri, yazılım geliştirme ve dijital dönüşüm danışmanlığı hizmetleri.",
                 logo: "fa-microchip",
-                phone: "905551234567",
-                location: "https://goo.gl/maps/example"
+                image: "assets/kurumlar/silifke-teknoloji.webp",
+                phone: "05011683259",
+                location: "https://maps.apple.com/?address=İlhan Akgün Cd. 5/3, 33960 Silifke, Mersin, Türkiye"
             }
         ];
 
@@ -1310,11 +1438,18 @@
                 const safeLogo = sanitizeHTML(item.logo);
                 const safeLocation = isValidURL(item.location) ? item.location : '#';
                 const safePhone = item.phone.replace(/[^0-9+]/g, '');
+                const safeImage = item.image ? sanitizeHTML(item.image) : null;
+
+                // Logo kısmını görsel veya ikon olarak göster
+                const logoContent = safeImage
+                    ? `<img src="${safeImage}" alt="${safeName}" class="company-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                       <div class="company-logo-fallback" style="display:none;"><i class="fa-solid ${safeLogo}"></i></div>`
+                    : `<i class="fa-solid ${safeLogo}"></i>`;
 
                 card.innerHTML = `
                     <div class="card-header">
                         <div class="company-logo">
-                            <i class="fa-solid ${safeLogo}"></i>
+                            ${logoContent}
                         </div>
                         <div class="company-info">
                             <h3>${safeName}</h3>
@@ -1342,8 +1477,12 @@
             const names = {
                 'saglik': 'Sağlık',
                 'egitim': 'Eğitim',
-                'gida': 'Gıda / Yemek',
-                'sektorel': 'Sektörel'
+                'kargo': 'Kargo',
+                'laboratuvar': 'Laboratuvar',
+                'ev-tekstil': 'Ev & Tekstil',
+                'otel': 'Otel',
+                'fizyoterapi': 'Fizyoterapi',
+                'teknoloji': 'Teknoloji'
             };
             return names[cat] || cat;
         }

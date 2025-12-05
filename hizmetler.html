@@ -415,31 +415,197 @@
         <div class="container">
             <div class="content-grid">
 
-                <!-- Gerekli Evraklar -->
-                <div class="info-card">
+                <!-- Kayıt İçin Gerekli Evraklar - Tam Genişlik -->
+                <div class="info-card" style="grid-column: 1 / -1;">
                     <h3><i class="fa-solid fa-file-lines"></i> Kayıt İçin Gerekli Evraklar</h3>
-                    <ul class="doc-list">
-                        <li>
-                            <i class="fa-solid fa-check doc-icon"></i>
-                            <span class="doc-link">Nüfus Cüzdanı Fotokopisi</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-check doc-icon"></i>
-                            <span class="doc-link">Tapu Fotokopisi veya Kira Kontratı</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-check doc-icon"></i>
-                            <span class="doc-link">İkametgah Belgesi</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-check doc-icon"></i>
-                            <span class="doc-link">2 Adet Biyometrik Fotoğraf</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-check doc-icon"></i>
-                            <span class="doc-link">Çiftçi Kayıt Formu (Odadan Temin Edilir)</span>
-                        </li>
-                    </ul>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+
+                        <!-- ŞAHIS KAYITLARINDA -->
+                        <div
+                            style="background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%); border-radius: 16px; padding: 1.5rem; border: 2px solid var(--primary-color); position: relative;">
+                            <div
+                                style="position: absolute; top: -12px; left: 20px; background: var(--primary-color); color: white; padding: 0.4rem 1rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem;">
+                                <i class="fa-solid fa-user"></i> ŞAHIS KAYITLARINDA
+                            </div>
+                            <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                                <li
+                                    style="padding: 0.75rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">KİMLİK FOTOKOPİSİ</span>
+                                </li>
+                                <li
+                                    style="padding: 0.75rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">ÇİFTÇİ KAYIT YAPTIRMA
+                                        DİLEKÇESİ</span>
+                                </li>
+                                <li
+                                    style="padding: 0.75rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">ÇİFTÇİ KÜTÜĞÜ <em
+                                            style="color: var(--primary-dark); font-weight: 600;">(Muhtar
+                                            Onaylı)</em></span>
+                                </li>
+                                <li
+                                    style="padding: 0.75rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">TAPU FOTOKOPİSİ</span>
+                                </li>
+                                <li
+                                    style="padding: 0.75rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <div>
+                                        <span style="color: var(--text-dark); font-weight: 500;">KİRA SÖZLEŞMESİ <em
+                                                style="color: var(--primary-dark); font-weight: 600;">(Muhtar
+                                                Onaylı)</em></span>
+                                        <p style="color: var(--text-gray); font-size: 0.85rem; margin-top: 2px;">
+                                            (Kiradaysa Fotokopisi İstenmektedir)</p>
+                                    </div>
+                                </li>
+                                <li
+                                    style="padding: 0.75rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <div>
+                                        <span style="color: var(--text-dark); font-weight: 500;">B-FORMU</span>
+                                        <p
+                                            style="color: var(--accent-color); font-size: 0.85rem; margin-top: 2px; font-weight: 600;">
+                                            (Odamızdan Temin Edilir)</p>
+                                    </div>
+                                </li>
+                                <li style="padding: 0.75rem 0; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <div>
+                                        <span style="color: var(--text-dark); font-weight: 500;">BİLGİ PAYLAŞIM VE İZİN
+                                            BELGESİ</span>
+                                        <p
+                                            style="color: var(--accent-color); font-size: 0.85rem; margin-top: 2px; font-weight: 600;">
+                                            (Odamızdan Temin Edilir)</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- TÜZEL KAYITLARDA -->
+                        <div
+                            style="background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%); border-radius: 16px; padding: 1.5rem; border: 2px solid var(--primary-color); position: relative;">
+                            <div
+                                style="position: absolute; top: -12px; left: 20px; background: var(--primary-dark); color: white; padding: 0.4rem 1rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem;">
+                                <i class="fa-solid fa-building"></i> TÜZEL KAYITLARDA
+                            </div>
+                            <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">ÇİFTÇİ KAYIT YAPTIRMA
+                                        DİLEKÇESİ <em style="color: var(--primary-dark); font-weight: 600;">(Muhtar
+                                            Onaylı)</em></span>
+                                </li>
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <div>
+                                        <span style="color: var(--text-dark); font-weight: 500;">ÇİFTÇİ KÜTÜĞÜ <em
+                                                style="color: var(--primary-dark); font-weight: 600;">(Muhtar
+                                                Onaylı)</em></span>
+                                        <p
+                                            style="color: var(--accent-color); font-size: 0.85rem; margin-top: 2px; font-weight: 600;">
+                                            (Odamızdan Temin Edilir)</p>
+                                    </div>
+                                </li>
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">TAPU FOTOKOPİSİ</span>
+                                </li>
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <div>
+                                        <span style="color: var(--text-dark); font-weight: 500;">KİRA SÖZLEŞMESİ <em
+                                                style="color: var(--primary-dark); font-weight: 600;">(Muhtar
+                                                Onaylı)</em></span>
+                                        <p style="color: var(--text-gray); font-size: 0.85rem; margin-top: 2px;">
+                                            (Kiradaysa İstenmektedir)</p>
+                                    </div>
+                                </li>
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <div>
+                                        <span style="color: var(--text-dark); font-weight: 500;">B-FORMU</span>
+                                        <p
+                                            style="color: var(--accent-color); font-size: 0.85rem; margin-top: 2px; font-weight: 600;">
+                                            (Odamızdan Temin Edilir)</p>
+                                    </div>
+                                </li>
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">İMZA YETKİ BELGESİ</span>
+                                </li>
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">RESMİ GAZETE İLANI</span>
+                                </li>
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">TİCARET ODASI KAYIT
+                                        BELGESİ</span>
+                                </li>
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">ORTAKLARIN
+                                        SÖZLEŞMESİ</span>
+                                </li>
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">ORTAKLARIN KİMLİK
+                                        FOTOKOPİSİ</span>
+                                </li>
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">VERGİ LEVHASI
+                                        FOTOKOPİSİ</span>
+                                </li>
+                                <li style="padding: 0.6rem 0; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <div>
+                                        <span style="color: var(--text-dark); font-weight: 500;">BİLGİ PAYLAŞIM VE İZİN
+                                            BELGESİ</span>
+                                        <p
+                                            style="color: var(--accent-color); font-size: 0.85rem; margin-top: 2px; font-weight: 600;">
+                                            (Odamızdan Temin Edilir)</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
                 </div>
 
                 <!-- Banka Hesap Bilgileri -->
