@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary Meta Tags -->
+    <title>Hizmetler & Bilgi Merkezi | Silifke Ziraat Odası</title>
+    <meta name="title" content="Hizmetler & Bilgi Merkezi | Silifke Ziraat Odası">
+    <meta name="description"
+        content="Silifke Ziraat Odası hizmet ve bilgi merkezi. Kayıt için gerekli evraklar, banka hesap bilgileri, bölge raporları ve iletişim bilgileri.">
+    <meta name="keywords"
+        content="Silifke Ziraat Odası, çiftçi belgesi, kayıt evrakları, banka hesabı, IBAN, tarımsal raporlar">
+    <meta name="author" content="Silifke Ziraat Odası">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://silifkeziraatodasi.org.tr/hizmetler">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://silifkeziraatodasi.org.tr/hizmetler">
+    <meta property="og:title" content="Hizmetler & Bilgi Merkezi | Silifke Ziraat Odası">
+    <meta property="og:description" content="Kayıt için gerekli evraklar, banka hesap bilgileri ve bölge raporları.">
+    <meta property="og:image" content="https://silifkeziraatodasi.org.tr/silifke-ziraat-odasi-logo.webp">
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://silifkeziraatodasi.org.tr/hizmetler">
+    <meta property="twitter:title" content="Hizmetler & Bilgi Merkezi | Silifke Ziraat Odası">
+    <meta property="twitter:description"
+        content="Kayıt için gerekli evraklar, banka hesap bilgileri ve bölge raporları.">
+
+    <!-- Favicon & Theme -->
+    <link rel="icon" type="image/webp" href="silifke-ziraat-odasi-logo.webp">
+    <meta name="theme-color" content="#2E7D32">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <style>
+        /* Reuse core styles */
+        :root {
+            --primary-color: #2E7D32;
+            --primary-light: #4CAF50;
+            --primary-dark: #1B5E20;
+            --accent-color: #F9A825;
+            --bg-light: #F3F4F6;
+            --white: #FFFFFF;
+            --text-dark: #111827;
+            --text-gray: #4B5563;
+            --border-radius: 16px;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-dark);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        /* Navbar */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .site-logo {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: inline-block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(27, 94, 32, 0.9), rgba(27, 94, 32, 0.8)), url('https://images.unsplash.com/photo-1595839088656-559904245b73?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 8rem 0 4rem;
+            margin-top: -80px;
+            padding-top: calc(8rem + 80px);
+        }
+
+        .page-header h1 {
+            color: var(--white);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Content Sections */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e5e7eb;
+        }
+
+        .info-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .info-card h3 i {
+            color: var(--accent-color);
+        }
+
+        .doc-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #f3f4f6;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .doc-list li:last-child {
+            border-bottom: none;
+        }
+
+        .doc-icon {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .doc-link {
+            color: var(--text-dark);
+            font-weight: 500;
+            flex: 1;
+        }
+
+        .doc-link:hover {
+            color: var(--primary-color);
+        }
+
+        .download-btn {
+            background: #e8f5e9;
+            color: var(--primary-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Bank Accounts */
+        .bank-card {
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid #e5e7eb;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bank-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+
+        .bank-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .iban-box {
+            background: var(--white);
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 1rem;
+            color: var(--text-gray);
+            border: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .copy-btn {
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        .copy-btn:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111827;
+            color: var(--white);
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+
+        .footer-links a {
+            color: #9CA3AF;
+            transition: var(--transition);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #6B7280;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: var(--shadow-md);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .site-logo {
+                height: 40px;
+            }
+
+            .logo-text {
+                font-size: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-card {
+                padding: 1.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 1.6rem;
+            }
+
+            .page-header p {
+                font-size: 0.95rem;
+            }
+
+            .info-card h3 {
+                font-size: 1.25rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .bank-card {
+                padding: 1rem;
+            }
+
+            .iban-box {
+                font-size: 0.85rem;
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+        }
+
+        /* Touch Device Optimization */
+        @media (hover: none) and (pointer: coarse) {
+
+            .nav-links a,
+            .download-btn,
+            .copy-btn {
+                min-height: 44px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+
+            header,
+            footer,
+            .mobile-menu-btn {
+                display: none !important;
+            }
+
+            .info-card {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="silifke-ziraat-odasi-logo.webp" alt="Silifke Ziraat Odası Logosu" class="site-logo">
+                    <span class="logo-text">Silifke Ziraat Odası</span>
+                </a>
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html">Anasayfa</a>
+                    <a href="kurumsal.html">Kurumsal</a>
+                    <a href="hizmetler.html" class="active">Hizmetler & Bilgi</a>
+                    <a href="anlasmalı-kurumlar.html">Anlaşmalı Kurumlar</a>
+                    <a href="#contact">İletişim</a>
+                </div>
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Hizmetler & Bilgi Merkezi</h1>
+            <p>Üyelerimiz için gerekli belgeler, raporlar ve banka bilgileri.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="content-grid">
+
+                <!-- Kayıt İçin Gerekli Evraklar - Tam Genişlik -->
+                <div class="info-card" style="grid-column: 1 / -1;">
+                    <h3><i class="fa-solid fa-file-lines"></i> Kayıt İçin Gerekli Evraklar</h3>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+
+                        <!-- ŞAHIS KAYITLARINDA -->
+                        <div
+                            style="background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%); border-radius: 16px; padding: 1.5rem; border: 2px solid var(--primary-color); position: relative;">
+                            <div
+                                style="position: absolute; top: -12px; left: 20px; background: var(--primary-color); color: white; padding: 0.4rem 1rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem;">
+                                <i class="fa-solid fa-user"></i> ŞAHIS KAYITLARINDA
+                            </div>
+                            <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                                <li
+                                    style="padding: 0.75rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">KİMLİK FOTOKOPİSİ</span>
+                                </li>
+                                <li
+                                    style="padding: 0.75rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">ÇİFTÇİ KAYIT YAPTIRMA
+                                        DİLEKÇESİ</span>
+                                </li>
+                                <li
+                                    style="padding: 0.75rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">ÇİFTÇİ KÜTÜĞÜ <em
+                                            style="color: var(--primary-dark); font-weight: 600;">(Muhtar
+                                            Onaylı)</em></span>
+                                </li>
+                                <li
+                                    style="padding: 0.75rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">TAPU FOTOKOPİSİ</span>
+                                </li>
+                                <li
+                                    style="padding: 0.75rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <div>
+                                        <span style="color: var(--text-dark); font-weight: 500;">KİRA SÖZLEŞMESİ <em
+                                                style="color: var(--primary-dark); font-weight: 600;">(Muhtar
+                                                Onaylı)</em></span>
+                                        <p style="color: var(--text-gray); font-size: 0.85rem; margin-top: 2px;">
+                                            (Kiradaysa Fotokopisi İstenmektedir)</p>
+                                    </div>
+                                </li>
+                                <li
+                                    style="padding: 0.75rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <div>
+                                        <span style="color: var(--text-dark); font-weight: 500;">B-FORMU</span>
+                                        <p
+                                            style="color: var(--accent-color); font-size: 0.85rem; margin-top: 2px; font-weight: 600;">
+                                            (Odamızdan Temin Edilir)</p>
+                                    </div>
+                                </li>
+                                <li style="padding: 0.75rem 0; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <div>
+                                        <span style="color: var(--text-dark); font-weight: 500;">BİLGİ PAYLAŞIM VE İZİN
+                                            BELGESİ</span>
+                                        <p
+                                            style="color: var(--accent-color); font-size: 0.85rem; margin-top: 2px; font-weight: 600;">
+                                            (Odamızdan Temin Edilir)</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- TÜZEL KAYITLARDA -->
+                        <div
+                            style="background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%); border-radius: 16px; padding: 1.5rem; border: 2px solid var(--primary-color); position: relative;">
+                            <div
+                                style="position: absolute; top: -12px; left: 20px; background: var(--primary-dark); color: white; padding: 0.4rem 1rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem;">
+                                <i class="fa-solid fa-building"></i> TÜZEL KAYITLARDA
+                            </div>
+                            <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">ÇİFTÇİ KAYIT YAPTIRMA
+                                        DİLEKÇESİ <em style="color: var(--primary-dark); font-weight: 600;">(Muhtar
+                                            Onaylı)</em></span>
+                                </li>
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <div>
+                                        <span style="color: var(--text-dark); font-weight: 500;">ÇİFTÇİ KÜTÜĞÜ <em
+                                                style="color: var(--primary-dark); font-weight: 600;">(Muhtar
+                                                Onaylı)</em></span>
+                                        <p
+                                            style="color: var(--accent-color); font-size: 0.85rem; margin-top: 2px; font-weight: 600;">
+                                            (Odamızdan Temin Edilir)</p>
+                                    </div>
+                                </li>
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">TAPU FOTOKOPİSİ</span>
+                                </li>
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <div>
+                                        <span style="color: var(--text-dark); font-weight: 500;">KİRA SÖZLEŞMESİ <em
+                                                style="color: var(--primary-dark); font-weight: 600;">(Muhtar
+                                                Onaylı)</em></span>
+                                        <p style="color: var(--text-gray); font-size: 0.85rem; margin-top: 2px;">
+                                            (Kiradaysa İstenmektedir)</p>
+                                    </div>
+                                </li>
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <div>
+                                        <span style="color: var(--text-dark); font-weight: 500;">B-FORMU</span>
+                                        <p
+                                            style="color: var(--accent-color); font-size: 0.85rem; margin-top: 2px; font-weight: 600;">
+                                            (Odamızdan Temin Edilir)</p>
+                                    </div>
+                                </li>
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">İMZA YETKİ BELGESİ</span>
+                                </li>
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">RESMİ GAZETE İLANI</span>
+                                </li>
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">TİCARET ODASI KAYIT
+                                        BELGESİ</span>
+                                </li>
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">ORTAKLARIN
+                                        SÖZLEŞMESİ</span>
+                                </li>
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">ORTAKLARIN KİMLİK
+                                        FOTOKOPİSİ</span>
+                                </li>
+                                <li
+                                    style="padding: 0.6rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <span style="color: var(--text-dark); font-weight: 500;">VERGİ LEVHASI
+                                        FOTOKOPİSİ</span>
+                                </li>
+                                <li style="padding: 0.6rem 0; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color: var(--primary-color); margin-top: 3px;"></i>
+                                    <div>
+                                        <span style="color: var(--text-dark); font-weight: 500;">BİLGİ PAYLAŞIM VE İZİN
+                                            BELGESİ</span>
+                                        <p
+                                            style="color: var(--accent-color); font-size: 0.85rem; margin-top: 2px; font-weight: 600;">
+                                            (Odamızdan Temin Edilir)</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Banka Hesap Bilgileri -->
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-building-columns"></i> Banka Hesap Bilgileri</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-gray);">Aidat ve diğer ödemeleriniz için
+                        aşağıdaki hesap numaralarını kullanabilirsiniz.</p>
+
+                    <div class="bank-card">
+                        <div class="bank-name">TC ZİRAAT BANKASI</div>
+                        <p style="color: var(--text-gray); margin-bottom: 0.5rem; font-size: 0.9rem;"><strong>Hesap
+                                Adı:</strong> Silifke Ziraat Odası Başkanlığı</p>
+                        <p style="color: var(--text-gray); margin-bottom: 0.5rem; font-size: 0.9rem;"><strong>Hesap
+                                No:</strong> 209-33255117-5001</p>
+                        <div class="iban-box">
+                            <span id="iban1">TR28 0001 0002 0933 2551 1750 01</span>
+                            <i class="fa-regular fa-copy copy-btn" onclick="copyToClipboard('iban1')"
+                                title="Kopyala"></i>
+                        </div>
+                        <p style="color: #e53935; margin-top: 0.75rem; font-weight: 600; font-size: 0.9rem;"><i
+                                class="fa-solid fa-circle-info"></i> Açıklama: TC Kimlik No mutlaka yazılmalı.</p>
+                    </div>
+
+                    <!-- Aidat Ödeme Bilgi Kutusu -->
+                    <div
+                        style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 1.5rem; border-radius: 12px; margin-top: 1.5rem; border-left: 4px solid var(--primary-color);">
+                        <h4
+                            style="color: var(--primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-solid fa-circle-check"></i> Aidat Ödeme Bilgisi
+                        </h4>
+                        <p style="color: var(--text-gray); margin-bottom: 1rem; font-size: 0.95rem;">
+                            TC Kimlik No yazarak aidat ödemesi yapılabilir.
+                        </p>
+                        <p style="color: var(--text-dark); font-weight: 600; margin-bottom: 0.5rem;">
+                            <i class="fa-solid fa-phone" style="color: var(--primary-color);"></i>
+                            Aidat bilgisi ve ödeme sonrası bilgi vermek için:
+                        </p>
+                        <p style="font-size: 1.1rem; font-weight: 700; color: var(--primary-dark);">
+                            0324 714 49 13 – 0531 783 88 18
+                        </p>
+                        <p style="color: var(--text-gray); font-size: 0.85rem; margin-top: 0.75rem;">
+                            numaralarından birine bilgi veriniz.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Bölgemiz Raporları -->
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-chart-pie"></i> Bölgemiz Raporları</h3>
+                    <ul class="doc-list">
+                        <li>
+                            <i class="fa-solid fa-file-pdf doc-icon" style="color: #e53935;"></i>
+                            <span class="doc-link">2024 Yılı Silifke Tarım Raporu</span>
+                            <a href="#" class="download-btn">İndir</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-file-pdf doc-icon" style="color: #e53935;"></i>
+                            <span class="doc-link">Narenciye Üretim İstatistikleri</span>
+                            <a href="#" class="download-btn">İndir</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-file-pdf doc-icon" style="color: #e53935;"></i>
+                            <span class="doc-link">Çilek Üretimi ve İhracat Verileri</span>
+                            <a href="#" class="download-btn">İndir</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Bilgi Edinme -->
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-circle-info"></i> Bilgi Edinme</h3>
+                    <p style="margin-bottom: 1rem; color: var(--text-gray);">Her türlü soru, görüş ve öneriniz için bize
+                        ulaşabilirsiniz.</p>
+                    <ul class="doc-list">
+                        <li>
+                            <i class="fa-solid fa-envelope doc-icon"></i>
+                            <span class="doc-link">bilgi@silifkeziraatodasi.org.tr</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone doc-icon"></i>
+                            <span class="doc-link">0324 714 49 13 - 0531 783 88 18</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn-primary"
+                        style="display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">İletişime
+                        Geç</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Silifke Ziraat Odası</h3>
+                    <p style="color: #9CA3AF; margin-bottom: 1.5rem;">Çiftçimizin yanında, üretimde öncüyüz.</p>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Saray Mah. Sanatçılar 2 Sk. Okur İşhanı Kat:3 No:301, 33940 Silifke/Mersin</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>0324 714 49 13</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        <span>0531 783 88 18</span>
+                    </div>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="https://www.facebook.com/silifkeziraatodasibaskanligi/" target="_blank"
+                            rel="noopener noreferrer" style="font-size: 1.2rem; color: #9CA3AF;"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/silifkeziraatodasi?igsh=aDc2bmJtdzh6dTdm" target="_blank"
+                            rel="noopener noreferrer" style="font-size: 1.2rem; color: #9CA3AF;"><i
+                                class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Hızlı Erişim</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Anasayfa</a></li>
+                        <li><a href="kurumsal.html">Kurumsal</a></li>
+                        <li><a href="hizmetler.html">Hizmetler</a></li>
+                        <li><a href="anlasmalı-kurumlar.html">Anlaşmalı Kurumlar</a></li>
+                        <li><a href="#contact">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Çalışma Saatleri</h3>
+                    <ul class="footer-links">
+                        <li>Hafta İçi: 08:00 - 17:00</li>
+                        <li>Hafta Sonu: Kapalı</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Silifke Ziraat Odası. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Copy to Clipboard - Secure version
+        function copyToClipboard(elementId) {
+            // Validate elementId to prevent injection
+            if (!/^iban[0-9]+$/.test(elementId)) {
+                console.error('Invalid element ID');
+                return;
+            }
+
+            const element = document.getElementById(elementId);
+            if (!element) {
+                console.error('Element not found');
+                return;
+            }
+
+            const text = element.innerText;
+
+            // Validate IBAN format (basic validation)
+            if (!/^TR[0-9\s]+$/.test(text)) {
+                console.error('Invalid IBAN format');
+                return;
+            }
+
+            navigator.clipboard.writeText(text).then(() => {
+                // Use a custom notification instead of alert for better UX
+                const originalText = element.parentElement.innerHTML;
+                element.parentElement.innerHTML = '<span style="color: var(--primary-color); font-weight: 600;">✓ Kopyalandı!</span>';
+                setTimeout(() => {
+                    element.parentElement.innerHTML = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Kopyalama başarısız:', err);
+            });
+        }
+    </script>
+</body>
+
+</html>

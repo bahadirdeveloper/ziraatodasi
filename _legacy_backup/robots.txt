@@ -1,0 +1,9 @@
+# Silifke Ziraat Odası Web Sitesi
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://silifkeziraatodasi.org.tr/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

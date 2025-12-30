@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary Meta Tags -->
+    <title>Kurumsal Yapı | Silifke Ziraat Odası - Yönetim, Meclis ve Personel</title>
+    <meta name="title" content="Kurumsal Yapı | Silifke Ziraat Odası">
+    <meta name="description"
+        content="Silifke Ziraat Odası kurumsal yapısı. Yönetim Kurulu, Meclis Üyeleri ve İdari Personel kadromuz hakkında bilgi edinin.">
+    <meta name="keywords"
+        content="Silifke Ziraat Odası, yönetim kurulu, meclis üyeleri, personel, Kemal Gezer, kurumsal">
+    <meta name="author" content="Silifke Ziraat Odası">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://silifkeziraatodasi.org.tr/kurumsal">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://silifkeziraatodasi.org.tr/kurumsal">
+    <meta property="og:title" content="Kurumsal Yapı | Silifke Ziraat Odası">
+    <meta property="og:description"
+        content="Silifke Ziraat Odası kurumsal yapısı. Yönetim Kurulu, Meclis Üyeleri ve İdari Personel kadromuz.">
+    <meta property="og:image" content="https://silifkeziraatodasi.org.tr/silifke-ziraat-odasi-logo.webp">
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://silifkeziraatodasi.org.tr/kurumsal">
+    <meta property="twitter:title" content="Kurumsal Yapı | Silifke Ziraat Odası">
+    <meta property="twitter:description"
+        content="Silifke Ziraat Odası kurumsal yapısı. Yönetim Kurulu, Meclis Üyeleri ve İdari Personel kadromuz.">
+
+    <!-- Favicon & Theme -->
+    <link rel="icon" type="image/webp" href="silifke-ziraat-odasi-logo.webp">
+    <meta name="theme-color" content="#2E7D32">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <style>
+        /* Reuse core styles from index.html */
+        :root {
+            --primary-color: #2E7D32;
+            --primary-light: #4CAF50;
+            --primary-dark: #1B5E20;
+            --accent-color: #F9A825;
+            --bg-light: #F3F4F6;
+            --white: #FFFFFF;
+            --text-dark: #111827;
+            --text-gray: #4B5563;
+            --border-radius: 16px;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-dark);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        /* Navbar */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .site-logo {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: inline-block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(27, 94, 32, 0.9), rgba(27, 94, 32, 0.8)), url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 8rem 0 4rem;
+            margin-top: -80px;
+            padding-top: calc(8rem + 80px);
+        }
+
+        .page-header h1 {
+            color: var(--white);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Team Grid */
+        .team-section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 0.5rem auto 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            text-align: center;
+            padding-bottom: 1.5rem;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .team-img-wrapper {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+
+        .team-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.5s ease;
+        }
+
+        .team-card:hover .team-img {
+            transform: scale(1.05);
+        }
+
+        .team-info {
+            padding: 1.5rem 1rem 0;
+        }
+
+        .team-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .team-role {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* President Special Style */
+        .president-section {
+            background-color: var(--white);
+        }
+
+        .president-container {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .president-img-box {
+            flex: 1;
+            max-width: 400px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .president-img-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .president-content {
+            flex: 2;
+        }
+
+        .president-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .president-content .role {
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .president-content p {
+            margin-bottom: 1rem;
+            color: var(--text-gray);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111827;
+            color: var(--white);
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+
+        .footer-links a {
+            color: #9CA3AF;
+            transition: var(--transition);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #6B7280;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 992px) {
+            .president-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .president-content h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: var(--shadow-md);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .site-logo {
+                height: 40px;
+            }
+
+            .logo-text {
+                font-size: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 1.6rem;
+            }
+
+            .page-header p {
+                font-size: 0.95rem;
+            }
+
+            .president-content h2 {
+                font-size: 1.75rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-img-wrapper {
+                height: 250px;
+            }
+
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .history-item {
+                flex-direction: column;
+                gap: 0.25rem;
+                text-align: center;
+            }
+        }
+
+        /* Touch Device Optimization */
+        @media (hover: none) and (pointer: coarse) {
+            .nav-links a {
+                min-height: 44px;
+            }
+
+            .team-card:hover {
+                transform: none;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+
+            header,
+            footer,
+            .mobile-menu-btn {
+                display: none !important;
+            }
+
+            .team-card {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="silifke-ziraat-odasi-logo.webp" alt="Silifke Ziraat Odası Logosu" class="site-logo">
+                    <span class="logo-text">Silifke Ziraat Odası</span>
+                </a>
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html">Anasayfa</a>
+                    <a href="kurumsal.html" class="active">Kurumsal</a>
+                    <a href="hizmetler.html">Hizmetler & Bilgi</a>
+                    <a href="anlasmalı-kurumlar.html">Anlaşmalı Kurumlar</a>
+                    <a href="#contact">İletişim</a>
+                </div>
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Kurumsal Yapımız</h1>
+            <p>Silifke çiftçisine hizmet veren güçlü kadromuz.</p>
+        </div>
+    </section>
+
+    <!-- History Section (Past Presidents) -->
+    <section id="history" style="background-color: var(--white); padding-bottom: 2rem;">
+        <div class="container">
+            <div class="section-title" style="margin-bottom: 2rem;">
+                <h2>Başkanlık Tarihçesi</h2>
+                <p>Geçmişten günümüze odamıza hizmet eden başkanlarımız.</p>
+            </div>
+            <div
+                style="max-width: 800px; margin: 0 auto; background: #f9fafb; padding: 2rem; border-radius: 16px; border: 1px solid #e5e7eb;">
+                <div class="history-item"
+                    style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid #e5e7eb;">
+                    <span style="font-weight: 700; color: var(--primary-color);">2024 - Günümüz</span>
+                    <span style="font-weight: 500;">Kemal GEZER</span>
+                </div>
+                <div class="history-item"
+                    style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid #e5e7eb;">
+                    <span style="font-weight: 700; color: var(--primary-color);">2016 - 2024</span>
+                    <span style="font-weight: 500;">Cafer DOYGUN</span>
+                </div>
+                <div class="history-item"
+                    style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid #e5e7eb;">
+                    <span style="font-weight: 700; color: var(--primary-color);">1992 - 2015</span>
+                    <span style="font-weight: 500;">Mahire CAN</span>
+                </div>
+                <div class="history-item"
+                    style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid #e5e7eb;">
+                    <span style="font-weight: 700; color: var(--primary-color);">1981 - 1991</span>
+                    <span style="font-weight: 500;">A. Fuat YILMAZ</span>
+                </div>
+                <div class="history-item"
+                    style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid #e5e7eb;">
+                    <span style="font-weight: 700; color: var(--primary-color);">1977 - 1980</span>
+                    <span style="font-weight: 500;">Fuat YALÇIN</span>
+                </div>
+                <div class="history-item"
+                    style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid #e5e7eb;">
+                    <span style="font-weight: 700; color: var(--primary-color);">1975 - 1976</span>
+                    <span style="font-weight: 500;">Metin Mertol KABAL</span>
+                </div>
+                <div class="history-item"
+                    style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid #e5e7eb;">
+                    <span style="font-weight: 700; color: var(--primary-color);">1973 - 1975</span>
+                    <span style="font-weight: 500;">Resul KAYNAR</span>
+                </div>
+                <div class="history-item"
+                    style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid #e5e7eb;">
+                    <span style="font-weight: 700; color: var(--primary-color);">1973</span>
+                    <span style="font-weight: 500;">Sinan TOKMAR</span>
+                </div>
+                <div class="history-item"
+                    style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid #e5e7eb;">
+                    <span style="font-weight: 700; color: var(--primary-color);">1969 - 1973</span>
+                    <span style="font-weight: 500;">Mehmet ERKEN</span>
+                </div>
+                <div class="history-item" style="display: flex; justify-content: space-between; padding: 1rem 0;">
+                    <span style="font-weight: 700; color: var(--primary-color);">1966 - 1969</span>
+                    <span style="font-weight: 500;">Halil İNCE (Kurucu)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- President Section -->
+    <section class="president-section">
+        <div class="container">
+            <div class="president-container">
+                <div class="president-img-box">
+                    <img src="assets/img/baskan/baskan.webp" alt="Kemal Gezer - Yönetim Kurulu Başkanı">
+                </div>
+                <div class="president-content">
+                    <h2>Kemal GEZER</h2>
+                    <span class="role">Yönetim Kurulu Başkanı</span>
+                    <p>Değerli Çiftçilerimiz,</p>
+                    <p>Silifke Ziraat Odası olarak, bereketli topraklarımızın ve siz değerli üreticilerimizin her zaman
+                        yanındayız. Amacımız, tarımsal üretimde verimliliği artırmak, çiftçimizin haklarını korumak ve
+                        Silifke tarımını hak ettiği yere taşımaktır.</p>
+                    <p>Teknolojik gelişmeleri yakından takip ederek, modern tarım uygulamalarını yaygınlaştırmak ve
+                        üreticilerimizin refah seviyesini yükseltmek için var gücümüzle çalışıyoruz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Board of Directors (Yönetim Kurulu) -->
+    <section id="yonetim">
+        <div class="container">
+            <div class="section-title">
+                <h2>Yönetim Kurulu</h2>
+                <p>Odamızın idari ve icra organı.</p>
+            </div>
+            <div class="team-grid">
+                <!-- Members -->
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/yonetim/02.hidir-arslan.webp" class="team-img"
+                            alt="Hıdır Arslan"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Hıdır ARSLAN</h3>
+                        <p class="team-role">Başkan Vekili</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/yonetim/03.bu-nyami-n-s-ahi-n.webp"
+                            class="team-img" alt="Bünyamin Şahin"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Bünyamin ŞAHİN</h3>
+                        <p class="team-role">Muhasip Üye</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/yonetim/04.feri-t-uysal.webp" class="team-img"
+                            alt="Ferit Uysal"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Ferit UYSAL</h3>
+                        <p class="team-role">Üye</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/yonetim/05.nebi-o-zer.webp" class="team-img"
+                            alt="Nebi Özer"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Nebi ÖZER</h3>
+                        <p class="team-role">Üye</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/yonetim/06.mustafa-kalak.webp" class="team-img"
+                            alt="Mustafa Kalak"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Mustafa KALAK</h3>
+                        <p class="team-role">Üye</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/yonetim/07.eyup-say.webp" class="team-img"
+                            alt="Eyüp Say"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Eyüp SAY</h3>
+                        <p class="team-role">Üye</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Council Members (Meclis) -->
+    <section id="meclis" style="background-color: var(--white);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meclis Üyeleri</h2>
+                <p>Çiftçilerimizin temsilcileri.</p>
+            </div>
+            <div class="team-grid">
+                <!-- Meclis Başkanı -->
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/meclis/01-go-khan-o-zdamar-mecli-s-bas-kani.webp"
+                            class="team-img" alt="Gökhan Özdamar"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Gökhan ÖZDAMAR</h3>
+                        <p class="team-role">Meclis Başkanı</p>
+                    </div>
+                </div>
+                <!-- Meclis Başkan Vekili -->
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img
+                            src="assets/img/meclis/02-mustafa-uc-ar-mecli-s-bas-kanveki-li-.webp" class="team-img"
+                            alt="Mustafa Uçar"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Mustafa UÇAR</h3>
+                        <p class="team-role">Meclis Başkan Vekili</p>
+                    </div>
+                </div>
+                <!-- Members (Example selection based on files) -->
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/meclis/03-kemal-gezer-u-ye.webp" class="team-img"
+                            alt="Kemal Gezer"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Kemal GEZER</h3>
+                        <p class="team-role">Meclis Üyesi</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/meclis/04-hidir-arslan-u-ye.webp"
+                            class="team-img" alt="Hıdır Arslan"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Hıdır ARSLAN</h3>
+                        <p class="team-role">Meclis Üyesi</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/meclis/05-bu-nyami-n-s-ahi-n-u-ye.webp"
+                            class="team-img" alt="Bünyamin Şahin"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Bünyamin ŞAHİN</h3>
+                        <p class="team-role">Meclis Üyesi</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/meclis/06-feri-t-uysal-u-ye.webp"
+                            class="team-img" alt="Ferit Uysal"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Ferit UYSAL</h3>
+                        <p class="team-role">Meclis Üyesi</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/meclis/07-nebi-o-zer-u-ye.webp" class="team-img"
+                            alt="Nebi Özer"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Nebi ÖZER</h3>
+                        <p class="team-role">Meclis Üyesi</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/meclis/08-eyup-say-u-ye.webp" class="team-img"
+                            alt="Eyüp Say"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Eyüp SAY</h3>
+                        <p class="team-role">Meclis Üyesi</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/meclis/09-mustafa-kalak-u-ye.webp"
+                            class="team-img" alt="Mustafa Kalak"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Mustafa KALAK</h3>
+                        <p class="team-role">Meclis Üyesi</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/meclis/10-abdurahman-rahmi-o-zc-alik-u-ye.webp"
+                            class="team-img" alt="Abdurahman Rahmi Özçalık"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">A. Rahmi ÖZÇALIK</h3>
+                        <p class="team-role">Meclis Üyesi</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/meclis/11-erdog-an-meti-n-u-ye.webp"
+                            class="team-img" alt="Erdoğan Metin"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Erdoğan METİN</h3>
+                        <p class="team-role">Meclis Üyesi</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/meclis/12-hamza-c-ocuk-u-ye.webp"
+                            class="team-img" alt="Hamza Çocuk"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Hamza ÇOCUK</h3>
+                        <p class="team-role">Meclis Üyesi</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/meclis/13-harun-kanmaz-u-ye.webp"
+                            class="team-img" alt="Harun Kanmaz"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Harun KANMAZ</h3>
+                        <p class="team-role">Meclis Üyesi</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/meclis/14-i-smai-l-c-ocuk-u-ye.webp"
+                            class="team-img" alt="İsmail Çocuk"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">İsmail ÇOCUK</h3>
+                        <p class="team-role">Meclis Üyesi</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/meclis/15-mehmet-uyar-u-ye.webp" class="team-img"
+                            alt="Mehmet Uyar"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Mehmet UYAR</h3>
+                        <p class="team-role">Meclis Üyesi</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/meclis/16-osman-ku-tu-k-u-ye.webp"
+                            class="team-img" alt="Osman Kütük"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Osman KÜTÜK</h3>
+                        <p class="team-role">Meclis Üyesi</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/meclis/17-sebahatti-n-deveci-u-ye.webp"
+                            class="team-img" alt="Sebahattin Deveci"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Sebahattin DEVECİ</h3>
+                        <p class="team-role">Meclis Üyesi</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/meclis/18-seyhan-kaya-u-ye.webp" class="team-img"
+                            alt="Seyhan Kaya"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Seyhan KAYA</h3>
+                        <p class="team-role">Meclis Üyesi</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/meclis/19-tunahan-evci-u-ye.webp"
+                            class="team-img" alt="Tunahan Evci"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Tunahan EVCİ</h3>
+                        <p class="team-role">Meclis Üyesi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Staff (Personel) -->
+    <section id="personel">
+        <div class="container">
+            <div class="section-title">
+                <h2>İdari Personel</h2>
+                <p>Odamızın güler yüzlü çalışanları.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/personel/01.mu-jde-kurubas-.webp"
+                            class="team-img" alt="Müjde Kurubaş"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Müjde KURUBAŞ</h3>
+                        <p class="team-role">Genel Sekreter</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/personel/02.mustafa-kucur.webp" class="team-img"
+                            alt="Mustafa Kucur"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Mustafa KUCUR</h3>
+                        <p class="team-role">Personel</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/personel/03.mehmet-evci.webp" class="team-img"
+                            alt="Mehmet Evci"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Mehmet EVCİ</h3>
+                        <p class="team-role">Personel</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/personel/04.i-brahim-serhat-go-ktas-.webp"
+                            class="team-img" alt="İbrahim Serhat Göktaş"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">İbrahim Serhat GÖKTAŞ</h3>
+                        <p class="team-role">Personel</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-wrapper"><img src="assets/img/personel/05.hu-sniye-uysal.webp" class="team-img"
+                            alt="Hüsniye Uysal"></div>
+                    <div class="team-info">
+                        <h3 class="team-name">Hüsniye UYSAL</h3>
+                        <p class="team-role">Personel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Silifke Ziraat Odası</h3>
+                    <p style="color: #9CA3AF; margin-bottom: 1.5rem;">Çiftçimizin yanında, üretimde öncüyüz.</p>
+                    <div class="contact-item"
+                        style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; color: #9CA3AF;">
+                        <i class="fa-solid fa-location-dot" style="color: var(--primary-light); margin-top: 4px;"></i>
+                        <span>Saray Mah. Sanatçılar 2 Sk. Okur İşhanı Kat:3 No:301, 33940 Silifke/Mersin</span>
+                    </div>
+                    <div class="contact-item"
+                        style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; color: #9CA3AF;">
+                        <i class="fa-solid fa-phone" style="color: var(--primary-light); margin-top: 4px;"></i>
+                        <span>0324 714 49 13</span>
+                    </div>
+                    <div class="contact-item"
+                        style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; color: #9CA3AF;">
+                        <i class="fa-solid fa-mobile-screen" style="color: var(--primary-light); margin-top: 4px;"></i>
+                        <span>0531 783 88 18</span>
+                    </div>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="https://www.facebook.com/silifkeziraatodasibaskanligi/" target="_blank"
+                            rel="noopener noreferrer" style="font-size: 1.2rem; color: #9CA3AF;"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/silifkeziraatodasi?igsh=aDc2bmJtdzh6dTdm" target="_blank"
+                            rel="noopener noreferrer" style="font-size: 1.2rem; color: #9CA3AF;"><i
+                                class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Hızlı Erişim</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Anasayfa</a></li>
+                        <li><a href="kurumsal.html">Kurumsal</a></li>
+                        <li><a href="hizmetler.html">Hizmetler</a></li>
+                        <li><a href="anlasmalı-kurumlar.html">Anlaşmalı Kurumlar</a></li>
+                        <li><a href="#contact">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Çalışma Saatleri</h3>
+                    <ul class="footer-links">
+                        <li>Hafta İçi: 08:00 - 17:00</li>
+                        <li>Hafta Sonu: Kapalı</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Silifke Ziraat Odası. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+</body>
+
+</html>
