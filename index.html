@@ -341,7 +341,7 @@
 
         /* --- Hero Section --- */
         .hero {
-            background: linear-gradient(rgba(27, 94, 32, 0.75), rgba(27, 94, 32, 0.65)), url('assets/img/silifke-hero.jpg');
+            background: linear-gradient(rgba(27, 94, 32, 0.75), rgba(27, 94, 32, 0.65)), url('baskan.jpeg');
             background-size: cover;
             background-position: center;
             color: var(--white);
@@ -1158,33 +1158,6 @@
         </div>
     </section>
 
-    <!-- Discounts Section -->
-    <section id="discounts">
-        <div class="container">
-            <div class="section-title">
-                <h2>Anlaşmalı Kurumlar</h2>
-                <p>Üyelerimize özel sağlık, eğitim, gıda ve sektörel indirimler.</p>
-            </div>
-
-            <div class="filters">
-                <button class="filter-btn active" data-filter="all">Tümü</button>
-                <button class="filter-btn" data-filter="saglik">Sağlık</button>
-                <button class="filter-btn" data-filter="egitim">Eğitim</button>
-                <button class="filter-btn" data-filter="kargo">Kargo</button>
-                <button class="filter-btn" data-filter="laboratuvar">Laboratuvar</button>
-                <button class="filter-btn" data-filter="giyim">Giyim</button>
-                <button class="filter-btn" data-filter="ev-tekstil">Ev & Tekstil</button>
-                <button class="filter-btn" data-filter="otel">Otel</button>
-                <button class="filter-btn" data-filter="fizyoterapi">Fizyoterapi</button>
-                <button class="filter-btn" data-filter="teknoloji">Teknoloji</button>
-            </div>
-
-            <div class="discounts-grid" id="discountsGrid">
-                <!-- Cards will be injected via JS -->
-            </div>
-        </div>
-    </section>
-
     <!-- Announcements Section -->
     <section id="announcements" style="background-color: #e8f5e9;">
         <div class="container">
@@ -1261,6 +1234,33 @@
                     <p>Meteorolojiden alınan bilgiye göre bölgemizde hafif şiddette zirai don beklenmektedir. Tedbirli
                         olunması rica olunur.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discounts Section -->
+    <section id="discounts">
+        <div class="container">
+            <div class="section-title">
+                <h2>Anlaşmalı Kurumlar</h2>
+                <p>Üyelerimize özel sağlık, eğitim, gıda ve sektörel indirimler.</p>
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Tümü</button>
+                <button class="filter-btn" data-filter="saglik">Sağlık</button>
+                <button class="filter-btn" data-filter="egitim">Eğitim</button>
+                <button class="filter-btn" data-filter="kargo">Kargo</button>
+                <button class="filter-btn" data-filter="laboratuvar">Laboratuvar</button>
+                <button class="filter-btn" data-filter="giyim">Giyim</button>
+                <button class="filter-btn" data-filter="ev-tekstil">Ev & Tekstil</button>
+                <button class="filter-btn" data-filter="otel">Otel</button>
+                <button class="filter-btn" data-filter="fizyoterapi">Fizyoterapi</button>
+                <button class="filter-btn" data-filter="teknoloji">Teknoloji</button>
+            </div>
+
+            <div class="discounts-grid" id="discountsGrid">
+                <!-- Cards will be injected via JS -->
             </div>
         </div>
     </section>
@@ -1465,9 +1465,9 @@
             function normalizeCat(cat) {
                 if (!cat) return '';
                 return cat.toLowerCase()
-                    .replace(/ğ/g,'g').replace(/ü/g,'u').replace(/ş/g,'s')
-                    .replace(/ı/g,'i').replace(/ö/g,'o').replace(/ç/g,'c')
-                    .replace(/[^a-z0-9-]/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+                    .replace(/ğ/g, 'g').replace(/ü/g, 'u').replace(/ş/g, 's')
+                    .replace(/ı/g, 'i').replace(/ö/g, 'o').replace(/ç/g, 'c')
+                    .replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
             }
 
             // CMS verisini discounts formatına dönüştür
