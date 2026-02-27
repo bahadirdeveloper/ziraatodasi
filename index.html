@@ -1381,9 +1381,107 @@
         </div>
     </footer>
 
+    <!-- Supabase CMS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
     <!-- JavaScript -->
     <script>
-        // Anlaşmalı Kurumlar Verileri
+        // ============ CMS ENTEGRASYONU ============
+        const CMS_SUPABASE_URL = 'https://ljiahfgvxtkkatkfbcia.supabase.co';
+        const CMS_SUPABASE_ANON_KEY = 'sb_publishable_7-usT9WvxhPfSOm7-pqF3Q_iYI26sKw';
+        const CMS_SITE_ID = 'ziraat_odasi';
+
+        let cmsSupabase = null;
+        try {
+            cmsSupabase = supabase.createClient(CMS_SUPABASE_URL, CMS_SUPABASE_ANON_KEY);
+        } catch (e) {
+            console.warn('CMS bağlantısı kurulamadı, hardcoded veriler kullanılacak.');
+        }
+
+        async function fetchCmsCollection(slug) {
+            if (!cmsSupabase) return [];
+            try {
+                const { data: collections } = await cmsSupabase
+                    .from('collections')
+                    .select('id')
+                    .eq('site_id', CMS_SITE_ID)
+                    .eq('slug', slug)
+                    .eq('is_active', true)
+                    .limit(1);
+                if (!collections || !collections.length) return [];
+                const { data: items } = await cmsSupabase
+                    .from('collection_items')
+                    .select('id, data, sort_order')
+                    .eq('collection_id', collections[0].id)
+                    .eq('site_id', CMS_SITE_ID)
+                    .eq('status', 'published')
+                    .eq('is_active', true)
+                    .order('sort_order', { ascending: true });
+                return items || [];
+            } catch (e) {
+                console.warn('CMS veri çekme hatası:', e);
+                return [];
+            }
+        }
+
+        // Duyuruları CMS'ten yükle
+        async function loadCmsDuyurular() {
+            const items = await fetchCmsCollection('duyurular');
+            if (!items.length) return; // Hardcoded HTML kalır
+
+            const wrapper = document.querySelector('.announcements-wrapper');
+            if (!wrapper) return;
+
+            wrapper.innerHTML = '';
+            items.forEach((item, index) => {
+                const d = item.data;
+                const card = document.createElement('div');
+                card.className = 'announcement-card';
+                if (index === 0 && d.image_url) card.style.gridColumn = '1 / -1';
+
+                let html = '';
+                if (d.image_url) {
+                    html += '<img src="' + sanitizeHTML(d.image_url) + '" alt="' + sanitizeHTML(d.title) + '" class="announcement-img" style="width:100%;height:auto;border-radius:var(--border-radius);margin-bottom:1rem;">';
+                }
+                html += '<span class="announcement-date">' + sanitizeHTML(d.date) + '</span>';
+                html += '<h3 class="announcement-title">' + sanitizeHTML(d.title) + '</h3>';
+                html += '<div class="announcement-content">';
+                const paragraphs = (d.content || '').split('\n').filter(p => p.trim());
+                paragraphs.forEach(p => { html += '<p>' + sanitizeHTML(p) + '</p>'; });
+                if (d.author) html += '<p><strong>' + sanitizeHTML(d.author) + '</strong></p>';
+                html += '</div>';
+
+                card.innerHTML = html;
+                wrapper.appendChild(card);
+            });
+        }
+
+        // Anlaşmalı Kurumları CMS'ten yükle
+        async function loadCmsKurumlar() {
+            const items = await fetchCmsCollection('anlasmali_kurumlar');
+            if (!items.length) return; // Hardcoded array kalır
+
+            // CMS verisini discounts formatına dönüştür
+            const cmsDiscounts = items.map((item, i) => ({
+                id: i + 1,
+                name: item.data.name || '',
+                category: item.data.category || '',
+                discount: item.data.discount || '',
+                desc: item.data.description || '',
+                logo: item.data.logo_icon || 'fa-building',
+                image: item.data.logo_image || '',
+                phone: item.data.phone || '',
+                location: item.data.location_url || '#'
+            }));
+
+            // Global discounts array'ini güncelle ve yeniden render et
+            discounts.length = 0;
+            cmsDiscounts.forEach(d => discounts.push(d));
+            renderDiscounts();
+        }
+        // ============ CMS ENTEGRASYONU SONU ============
+
+        // Anlaşmalı Kurumlar Verileri (Fallback)
         const discounts = [
             // SAĞLIK KURUMLARI
             {
@@ -1853,6 +1951,10 @@
 
         // Fetch weather on load
         fetchWeather();
+
+        // CMS verilerini yükle (hardcoded fallback'in üstüne yazar)
+        loadCmsDuyurular();
+        loadCmsKurumlar();
 
     </script>
 </body>

@@ -720,8 +720,52 @@
         </div>
     </footer>
 
+    <!-- Supabase CMS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
     <script>
-        // Anlaşmalı Kurumlar Verileri
+        // ============ CMS ENTEGRASYONU ============
+        const CMS_SUPABASE_URL = 'https://ljiahfgvxtkkatkfbcia.supabase.co';
+        const CMS_SUPABASE_ANON_KEY = 'sb_publishable_7-usT9WvxhPfSOm7-pqF3Q_iYI26sKw';
+        const CMS_SITE_ID = 'ziraat_odasi';
+
+        let cmsSupabase = null;
+        try {
+            cmsSupabase = supabase.createClient(CMS_SUPABASE_URL, CMS_SUPABASE_ANON_KEY);
+        } catch (e) { console.warn('CMS bağlantısı kurulamadı.'); }
+
+        async function fetchCmsCollection(slug) {
+            if (!cmsSupabase) return [];
+            try {
+                const { data: collections } = await cmsSupabase
+                    .from('collections').select('id')
+                    .eq('site_id', CMS_SITE_ID).eq('slug', slug).eq('is_active', true).limit(1);
+                if (!collections || !collections.length) return [];
+                const { data: items } = await cmsSupabase
+                    .from('collection_items').select('id, data, sort_order')
+                    .eq('collection_id', collections[0].id).eq('site_id', CMS_SITE_ID)
+                    .eq('status', 'published').eq('is_active', true)
+                    .order('sort_order', { ascending: true });
+                return items || [];
+            } catch (e) { return []; }
+        }
+
+        async function loadCmsKurumlar() {
+            const items = await fetchCmsCollection('anlasmali_kurumlar');
+            if (!items.length) return;
+            const cmsData = items.map((item, i) => ({
+                id: i + 1, name: item.data.name || '', category: item.data.category || '',
+                discount: item.data.discount || '', desc: item.data.description || '',
+                logo: item.data.logo_icon || 'fa-building', image: item.data.logo_image || '',
+                phone: item.data.phone || '', location: item.data.location_url || '#'
+            }));
+            institutions.length = 0;
+            cmsData.forEach(d => institutions.push(d));
+            renderInstitutions();
+        }
+        // ============ CMS ENTEGRASYONU SONU ============
+
+        // Anlaşmalı Kurumlar Verileri (Fallback)
         const institutions = [
             // SAĞLIK KURUMLARI
             {
@@ -1091,6 +1135,9 @@
 
         // Initial Render
         renderInstitutions();
+
+        // CMS verilerini yükle
+        loadCmsKurumlar();
     </script>
 </body>
 
