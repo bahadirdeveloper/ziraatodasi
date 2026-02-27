@@ -1461,11 +1461,20 @@
             const items = await fetchCmsCollection('anlasmali_kurumlar');
             if (!items.length) return; // Hardcoded array kalır
 
+            // Kategori slug'a dönüştür (Sağlık -> saglik, Eğitim -> egitim)
+            function normalizeCat(cat) {
+                if (!cat) return '';
+                return cat.toLowerCase()
+                    .replace(/ğ/g,'g').replace(/ü/g,'u').replace(/ş/g,'s')
+                    .replace(/ı/g,'i').replace(/ö/g,'o').replace(/ç/g,'c')
+                    .replace(/[^a-z0-9-]/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+            }
+
             // CMS verisini discounts formatına dönüştür
             const cmsDiscounts = items.map((item, i) => ({
                 id: i + 1,
                 name: item.data.name || '',
-                category: item.data.category || '',
+                category: normalizeCat(item.data.category) || '',
                 discount: item.data.discount || '',
                 desc: item.data.description || '',
                 logo: item.data.logo_icon || 'fa-building',
